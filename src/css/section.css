@@ -1,0 +1,27 @@
+.section {
+    background-image: url('../img/codebanner.jpg');
+    background-size: cover;
+    height:300px;
+    width: 100%;
+    margin-bottom: 50px
+} 
+
+.sectionpositioning {
+    margin-top: 50px;
+}
+
+.sectionpositioning h2 {
+    margin-top: 70px;
+    margin-bottom: 50px;
+    border-bottom: 0.5px solid  rgb(209, 201, 201);
+    padding-bottom: 15px ;
+    
+}
+
+.sectionpositioning ul li {
+    padding:20px;
+    font-size:20px;
+    list-style: none;
+}
+
+

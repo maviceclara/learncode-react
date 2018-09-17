@@ -1,0 +1,18 @@
+.form {
+    border-radius: 4px;
+    position:relative;
+    align-self: center;
+    max-width: 500px;
+    min-height: 550px; 
+    padding: 50px;
+    border: 4px solid gray;
+    box-sizing: border-box;
+    
+
+}
+
+.form input {
+    max-width: 500px;
+   
+    
+}

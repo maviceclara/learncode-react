@@ -1,0 +1,31 @@
+.divider{
+    border-top: 0.5px solid rgb(209, 201, 201);
+    padding-top: 50px;
+    
+}
+
+.thumbnail  {
+    text-decoration: none;
+    transition: all 0.2s;
+    border-radius: 10px;
+}
+
+.thumbnail:hover {
+    transform: scale(1.1);
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+}
+
+.thumbnail p  {
+   margin-top: 20px;
+   margin-left: 20px;
+  padding-bottom: 10px;
+}
+
+.course_title {
+    margin-bottom: 25px;
+}
+
+.course_img {
+    height: 170px;
+    width: 100%
+}
