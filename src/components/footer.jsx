@@ -28,7 +28,7 @@ class Footer extends Component {
                     <li><a href="/" className="" ><i className="fab fa-instagram"></i></a></li>
                   </ul>
                   <div className="copyright-text"> 
-                    <p>Copyright © 2018 Company</p>
+                    <p>Copyright © 2018 </p>
                     <p>Design: <a rel="/" href="/" >Learn code</a></p>
                     
                   </div>

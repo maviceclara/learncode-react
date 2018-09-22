@@ -16,7 +16,7 @@ class Section extends React.Component{
                                 
                                 <li> What language should you indeed learn?</li>
                                 
-                                <li><a href="/" class="">Click here</a> to get options to help you choose</li>
+                                <li><a href="/" >Click here</a> to get options to help you choose</li>
                             </ul>
                         </div>
 

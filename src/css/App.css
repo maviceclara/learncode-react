@@ -1,8 +1,12 @@
+body {
+  font-family: 'Poppins', sans-serif !important;
+}
+
+
 .bg-image {
   background: linear-gradient(100deg, rgba(1, 1, 2, 0.65) 50%, rgba(1, 1, 2, 0.65) 50%) ,url('../img/code.jpg');
   background-size: cover;
-  background-position-y: center;
-   
+  background-position-y: center;  
   min-height: 80vh;
 }
 
@@ -16,14 +20,22 @@
   top: -1px;
   text-align: center;
 } */
+.brand{
+  font-family: 'Kavoon', cursive !important;
+}
 
+.navbar-menu{
+  color: white !important;
+  border-color: white !important;
+}
 .nav-item a{
   font-size: 16px;
   line-height: 1.6;
   color: #b8b8b8 !important;
   font-weight: 400;
   margin-top: 15px;
-  margin-left: 25px
+  margin-left: 25px !important;
+  font-family: 'Poppins', sans-serif !important ;
   
 }
 
@@ -57,8 +69,8 @@
 }
 
 .banner-btn {
-  width:15%;
-  margin-left: px;
+  widows: 200px;
+ 
   margin-top: 40px;
 }
 

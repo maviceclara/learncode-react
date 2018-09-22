@@ -1,27 +1,29 @@
 import React, { Component } from 'react';
 import './css/App.css';
-import Course from './components/courses.jsx'
-import Section from './components/section.jsx'
-import Contact from './components/contact.jsx'
-import Footer from './components/footer.jsx'
-import Gallery from './components/gallery.jsx'
-import {Link} from 'react-router-dom'
+import Course from './components/courses.jsx';
+import Contact from './components/contact.jsx';
+import Footer from './components/footer.jsx';
+import Gallery from './components/gallery.jsx';
+import {Link} from 'react-router-dom';
 
 
 
 
 
 class App extends Component {
+  
+
+ 
   render() {
     return (
       <div className="App">
         <div className="bg-image">
           <div className="container ">
-              <nav className="navbar navbar-expand-md navbar-light sticky-top fixed-top" >
+              <nav className="navbar navbar-expand-md navbar-light sticky-top " >
                 <a className="navbar-brand brand-name" href="/"> 
-                <h2 style={{fontFamily: '"Lobster Two", cursive'}}>LearnCode</h2></a>   
+                <h2 className="brand">LearnCode</h2></a>   
                 <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navBarResponsive">
-                  <span className="navbar-toggler-icon"> </span>
+                  <span className="navbar-menu" >Menu </span>
                 </button> 
                 <div className="collapse navbar-collapse" id="navBarResponsive">
                   <ul className="navbar-nav ml-auto">
@@ -32,16 +34,16 @@ class App extends Component {
                       <a className="nav-link " href="/">About</a>
                     </li>  
                     <li className="nav-item">
-                      <Link to="/curriculum"className="nav-link">Curriculum</Link>
+                      <Link to="/courses2"className="nav-link">Courses</Link>
                     </li>  
                     <li className="nav-item">
                       <a href="#contact" className="nav-link">Contact</a>
                     </li>  
                     <li className="nav-item">
-                      <Link to="/signup.jsx" className="nav-link" href="/">Sign-up</Link>
+                      <Link to="/signup" className="nav-link" >Sign up</Link>
                     </li> 
                     <li className="nav-item">
-                      <Link to="/signin.jsx" className="nav-link" href="/">Sign-in</Link>
+                      <Link to="/signin" className="nav-link" >Sign in</Link>
                     </li> 
                    
                   </ul>
@@ -72,7 +74,7 @@ class App extends Component {
           
         </div>
 
-        <Section />
+       
         <Gallery />
         <Course />
         <Contact  id="contact"/>

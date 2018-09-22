@@ -4,6 +4,7 @@ import '../css/courses.css'
 
 
 class Course extends React.Component{
+   
     render(){
     return(
         <section id="courses">
@@ -13,9 +14,9 @@ class Course extends React.Component{
                 <div className="section-title"  >
                     <h2>Popular Courses <small>Upgrade your skills with newest courses</small></h2>
                 </div>
-                <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
-                    <div class="carousel-inner">
-                    <div class="carousel-item active">
+                <div id="carouselExampleSlidesOnly" className="carousel slide" data-ride="carousel">
+                    <div className="carousel-inner">
+                    <div className="carousel-item active">
                         <div className="row">
                         <div className="col-md-4 col-sm-4">
                             <div className="item">
@@ -106,7 +107,7 @@ class Course extends React.Component{
                         </div>            
                     </div>
 
-                    <div class="carousel-item">
+                    <div className="carousel-item">
                         <div className="row">
                         <div className="col-md-4 col-sm-4">
                             <div className="item">
