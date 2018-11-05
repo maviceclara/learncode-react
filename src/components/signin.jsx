@@ -22,7 +22,8 @@ class Signin extends React.Component {
         })
       }
       
-      handleSubmit = () => {
+      handleSubmit = (e) => {
+          e.preventDefault();
         let loginDetails = {
           identifier: this.state.identifier,
           password: this.state.password
@@ -31,14 +32,16 @@ class Signin extends React.Component {
             loading:true
           })
 
+
           let registeredUser = axios.post('https://staging-api.mentortemple.com/auth/local', loginDetails)
             registeredUser.then((response)=> {
                 if(response.status === 200) {
                     console.log('success')
+                    localStorage.setItem('auth', JSON.stringify(response.data))
                 this.setState({
                     loading:false
                 })
-                // return (this.props.history.push('/')) 
+                return (this.props.history.push('/')) 
                 }
                 
             }).catch((error)=>{
@@ -78,7 +81,7 @@ class Signin extends React.Component {
                                             <div className="input-group-prepend">
                                             <span className="input-group-text"><i className="fas fa-envelope"></i></span>
                                             </div>
-                                            <input type="email" className="form-control" placeholder="Enter email..."  name={"identifier"} value={this.state.identifier} onChange={this.handleInputChange} required/>
+                                            <input type="email" className="form-control" placeholder="Email"  name={"identifier"} value={this.state.identifier} onChange={this.handleInputChange} required/>
                                         </div>
                                     </div>
                                     <div className="form-group" id="">
@@ -86,17 +89,17 @@ class Signin extends React.Component {
                                         <input type="password" className="form-control" id="pwd" /> */}
                                         <div className="input-group" >
                                             <div className="input-group-prepend">
-                                            <span className="input-group-text" ><i className="fas fa-eye-slash"></i></span>
+                                            <span className="input-group-text" ><i className="fas fa-lock"></i></span>
                                             </div>
-                                            <input type="password" className="form-control" placeholder="Enter password..."   name={"password"} value={this.state.password} onChange={this.handleInputChange} required/>
+                                            <input type="password" className="form-control" placeholder="Password"   name={"password"} value={this.state.password} onChange={this.handleInputChange} required/>
                                         </div>
                                     </div>
-                                    <small className="text-center">No account? <Link to="/signup"><span className="signintext">Create one.</span></Link></small>
+                                    <small className="text-center">Don't have an account? <Link to="/signup"><span className="signintext">Create one.</span></Link></small>
                                     {
                                         !this.state.loading ?  
                                         <button type="submit" className="btn btn-outline button " onClick={this.handleSubmit}>Sign in</button> :
                                         
-                                        <button className="btn btn-outline btn-sm  " id="btn-loading" disabled >
+                                        <button className="btn btn-outline btn-sm  " id="btn-loading"  >
                                             <i className="fas fa-spinner fa-spin" />
                                         </button>
                                         }

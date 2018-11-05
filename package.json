@@ -7,7 +7,9 @@
     "contentful": "^7.0.3",
     "react": "^16.5.1",
     "react-dom": "^16.5.1",
-    "react-responsive-modal": "^3.4.0",
+    "react-loading-screen": "0.0.17",
+    "react-markdown": "^3.6.0",
+    "react-markdown-to-html": "^1.0.11",
     "react-router-dom": "^4.3.1",
     "react-scripts": "1.1.5"
   },

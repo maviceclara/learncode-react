@@ -1,0 +1,71 @@
+
+.navbar-bg{
+    background: linear-gradient(100deg, rgba(1, 1, 2, 0.80) 50%, rgba(1, 1, 2, 0.80) 50%) ,url('../img/laptops3.jpg');
+    background-size: cover;
+    background-position-y: center;  
+    min-height: 40vh;
+}
+
+
+.about-text {
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+.about-text h2 {
+    margin-top: 70px;
+    margin-bottom: 50px;
+    padding-bottom: 15px ;
+    font-weight: 600
+}
+
+.about-text h3 {
+   font-weight: 400
+    
+}
+
+.about-text p {
+    font-size:19px;
+    padding: 20px 10px;
+    line-height: 1.9;
+    letter-spacing: 0.05em;
+    
+}
+
+.section {
+    background-image: url('../img/codebanner.jpg');
+    background-size: cover;
+    height:300px;
+    width: 100%;
+    margin-bottom: 50px;
+    padding: 20px;  
+} 
+
+.secondsection {
+    background-image: url('../img/laptops.jpg');
+    background-size: cover;
+    height:300px;
+    width: 100%;
+    margin-top: 100px;
+    margin-bottom: 50px;
+    padding: 20px;  
+} 
+
+.heading {
+    margin-top: 50px;
+}
+
+.heading p {
+    font-size:19px;
+    padding: 20px 30px;
+    line-height: 1.9;
+    letter-spacing: 0.05em;
+}
+
+.heading h3 {
+    font-weight: 500;
+    padding: 20px 30px;
+ }
+
+
+

@@ -1,5 +1,6 @@
 body {
   font-family: 'Poppins', sans-serif !important;
+  background-color: floralwhite;
 }
 
 
@@ -10,16 +11,6 @@ body {
   min-height: 80vh;
 }
 
-/* .overlay {
-  background: linear-gradient(100deg, rgba(1, 1, 2, 0.65) 50%, rgba(1, 1, 2, 0.65) 50%);
-  position: absolute;
-  min-height: 80vh;
-  min-width: 1500px;
-  left: 1px;
-  z-index: 1;
-  top: -1px;
-  text-align: center;
-} */
 .brand{
   font-family: 'Kavoon', cursive !important;
 }
@@ -28,6 +19,7 @@ body {
   color: white !important;
   border-color: white !important;
 }
+
 .nav-item a{
   font-size: 16px;
   line-height: 1.6;
@@ -46,17 +38,15 @@ body {
 .brand-name {
   color: white !important;
   margin-top: 15px;
-
 }
 
 .banner {
   position: relative;
   margin-top: 12%;
-  margin-left:px
+  margin-right:50px !important
 }
 
-.banner-heading {
-  
+.banner-heading { 
   color: white;
   margin-bottom: 70px;
 }
@@ -74,8 +64,13 @@ body {
   margin-top: 40px;
 }
 
+
 .banner-btn:hover{
  background-color: #b8b8b8 !important;
+}
+
+.learn-more:hover{
+  background-color: #ffa502 !important;
 }
 
 
@@ -115,19 +110,15 @@ body {
   text-indent: 0px;
   font-weight: bold;
 }
-.slidingHorizontal span:nth-child() {
-  animation-delay: 2.5s;
-  -ms-animation-delay: 2.5s;
-  -webkit-animation-delay: 2.5s;
-}
 
-.slidingHorizontal span:nth-child(2) {
+
+.slidingHorizontal span:nth-child() {
   animation-delay: 5s;
   -ms-animation-delay: 5s;
   -webkit-animation-delay: 5s;
 }
 
-.slidingHorizontal span:nth-child(3) {
+.slidingHorizontal span:nth-child(2) {
   animation-delay: 7.5s;
   -ms-animation-delay: 7.5s;
   -webkit-animation-delay: 9.5s;
@@ -142,140 +133,22 @@ body {
   overflow: hidden;
   position: absolute;
   margin-top: -50px;
- 
-  
-  
-  
+}
+
+.avatar {
+  height: 15%;
+  width: 15%;
+  border-radius: 50%;
+}
+.coursescon{
+  background-color:#cecbab 
 }
 
 
-
-/* footer */
-
-footer {
-  background: #252020;
-  padding: 120px 0;
+.navbar-bg{
+  background: linear-gradient(100deg, rgba(1, 1, 2, 0.80) 50%, rgba(1, 1, 2, 0.80) 50%) ,url('../img/laptops3.jpg');
+  background-size: cover;
+  background-position-y: center;  
+  min-height: 40vh;
 }
 
-footer .section-title {
-  padding-bottom: 10px;
-}
-
-footer h2 {
-  font-size: 20px;
-}
-
-footer a,
-footer p {
-  color: #909090;
-}
-
-footer strong {
-  color: #d9d9d9;
-}
-
-footer address p {
-  margin-bottom: 0;
-}
-
-footer .social-icon {
-  margin-top: 25px;
-}
-
-.footer-info {
-  margin-right: 2em;
-}
-
-.footer-info h2 {
-  color: #ffffff;
-  padding: 0;
-}
-
-.footer_menu h2 {
-  margin-top: 2em;
-}
-
-.footer_menu ul {
-  margin: 0;
-  padding: 0;
-}
-
-.footer_menu li {
-  display: inline-block;
-  list-style: none;
-  margin: 5px 10px 5px 0;
-}
-
-.newsletter-form .form-control {
-  background: transparent;
-  border-radius: 0;
-  box-shadow: none;
-  border: 0;
-  border-bottom: 1px solid #303030;
-  height: 50px;
-  margin: 5px 0;
-}
-
-.newsletter-form input[type="submit"] {
-  background: transparent;
-  border: 1px solid #f9f9f9;
-  border-radius: 50px;
-  color: #ffffff;
-  display: block;
-  margin-top: 20px;
-  outline: none;
-  width: 50%;
-}
-
-.newsletter-form input[type="submit"]:hover {
-  background: #ffa502;
-  border-color: transparent;
-}
-
-.newsletter-form .form-group span {
-  color: #909090;
-  display: block;
-  font-size: 12px;
-  margin-top: 20px;
-}
-
-
-
-/* SOCIAL ICON  */
-
-.social-icon {
-  position: relative;
-  padding: 0;
-  margin: 0;
-}
-
-.social-icon li {
-  display: inline-block !important;
-  list-style: none;
-  margin-bottom: 5px;
-}
-
-.social-icon li a i {
-  border-radius: 100px;
-  color: #ffa502 !important;
-  font-size: 15px;
-  width: 35px;
-  height: 35px;
-  line-height: 35px;
-  text-decoration: none;
-  text-align: center;
-  transition: all 0.4s ease-in-out;
-  position: relative !important;
-  margin: 5px 5px 5px 0;
-}
-
-.social-icon li a i:hover {
-  background: #ffa502 !important;
-  color: #ffffff !important;
-}
-
-a:hover, a:active, a:focus {
-  color: #ffa502;
-  outline: none;
-  text-decoration:none;
-}

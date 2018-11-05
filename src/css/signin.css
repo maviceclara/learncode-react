@@ -1,9 +1,9 @@
-/* .user {
+.user {
     background: linear-gradient(100deg, rgba(1, 1, 2, 0.80) 50%, rgba(1, 1, 2, 0.80) 50%) ,url('../img/code.jpg');
     background-size: cover;
     background-position-y: center;
     height: 100Vh
-} */
+}
 
 .signText{
     color: #fefbfa !important
@@ -30,7 +30,7 @@
     border: none;
     cursor: pointer;
     width: 50%;
-    opacity: 0.9;
+    /* opacity: 0.9; */
     margin-left: 25%;
     margin-top: 15px
 }

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import '../css/gallery.css'
 // import * as contentful from 'contentful'
-import Maincourses from '../components/courses2.jsx'
+import Maincourses from '../components/courses.jsx'
 
 
 
@@ -45,10 +45,7 @@ class Gallery extends Component{
                 <div className="my-5 divider">
                 
                     <h6 className="course_title">FRONT-END WEB DEVELOPMENT</h6>
-                      <div className="row">
                         < Maincourses />
-
-                    </div>
                 </div>
 
 

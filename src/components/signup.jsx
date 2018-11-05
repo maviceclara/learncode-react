@@ -35,24 +35,26 @@ class Signup extends React.Component {
         password: this.state.password
       }
 
-      localStorage.setItem(this.state.email, newUser)
         this.setState({
             loading: true
     })
+
+    if(this.state.username && this.state.email === "")
+        this.setState({
+            serverErrors: 'Username is required'
+        })
     
 
     let registerPromise= axios.post('https://staging-api.mentortemple.com/auth/local/register', newUser);
     registerPromise.then((response)=>{
-      if(response.statusCode === 200) {
-          console.log('success')
+        localStorage.setItem('auth', JSON.stringify(response.data))
         this.setState({
           loading: false,
          
         })
-        // return (this.props.history.push('/')) 
-      }
+        return (this.props.history.push('/')) 
     }).catch((error)=>{
-        console.log(error.response.data.message)
+       
       this.setState({
         serverErrors: error.response.data.message,
        
@@ -92,7 +94,7 @@ class Signup extends React.Component {
                                                 <div className="input-group-prepend">
                                                 <span className="input-group-text" ><i className="fas fa-user"></i></span>
                                                 </div>
-                                                <input type="text" className="form-control" placeholder="Enter name..."  name={"username"} value={this.state.username} onChange={this.handleChange}required/>
+                                                <input type="text" className="form-control" placeholder="Name"  name={"username"} value={this.state.username} onChange={this.handleChange}required/>
                                                
                                             </div>
 
@@ -104,7 +106,7 @@ class Signup extends React.Component {
                                                 <div className="input-group-prepend">
                                                 <span className="input-group-text"><i className="fas fa-envelope"></i></span>
                                                 </div>
-                                                <input type="email" className="form-control" placeholder="Enter email..."  name={"email"}  value={this.state.email} onChange={this.handleChange} required/>
+                                                <input type="email" className="form-control" placeholder="Email"  name={"email"}  value={this.state.email} onChange={this.handleChange} required/>
                                                
                                             </div>
                                         </div>
@@ -113,9 +115,9 @@ class Signup extends React.Component {
                                             <input type="password" className="form-control" id="pwd" /> */}
                                             <div className="input-group" >
                                                 <div className="input-group-prepend">
-                                                <span className="input-group-text" ><i className="fas fa-eye-slash"></i></span>
+                                                <span className="input-group-text" ><i className="fas fa-lock"></i></span>
                                                 </div>
-                                                <input type="password" className="form-control" placeholder="Enter password..."  name={"password"}  value={this.state.password} onChange={this.handleChange} required/>
+                                                <input type="password" className="form-control" placeholder="Password"  name={"password"}  value={this.state.password} onChange={this.handleChange} required/>
                                                 
                                             </div>
                                         </div>

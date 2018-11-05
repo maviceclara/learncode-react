@@ -1,212 +1,65 @@
 import React from 'react';
-import '../css/courses.css'
+import '../css/gallery.css';
+import axios from 'axios';
+import {Link} from 'react-router-dom';
 
 
 
-class Course extends React.Component{
-   
+class Maincourses extends React.Component{
+    constructor(){
+        super()
+        this.state = {
+            courses:[],
+            lessons: []
+        }
+    }
+        componentDidMount() {
+            const coursesPromise = axios.get(
+              'https://staging-api.mentortemple.com/course'
+            );
+        
+            coursesPromise.then(response => {
+                // console.log(response.data.courses[0].id)
+                console.log(response.data.courses.lessons)
+              this.setState({
+               courses: response.data.courses,
+               lessons: response.data.courses[0].lessons
+              });
+              console.log(this.state)
+            });
+        }
+
+        getCourses = () => {
+            const courses = this.state.courses;
+        
+            const coursesJSX = courses.map(course => {
+                console.log('yea')
+              return (
+                        <div key={course.id} className="col-md-3" id="course">
+                            <div className="thumbnail my-5">
+                                <a href="/">
+                                    <img src={require('../img/laptop4.jpg')} alt=""  className="course_img" />
+                                    <div className="caption text-muted">
+                                        <h5 className="ml-3 mb-3 mt-3 coursetext">{course.title}</h5>
+                                        {/* <p className="">{course.description}</p> */}
+                                        <Link to={`/courses/${course.slug}`} className="btn  ml-3 mb-3 color">Open course</Link>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+
+              );
+            });
+            return coursesJSX;
+          };
     render(){
-    return(
-        <section id="courses">
-            <div className="container">
-            <div className="row">
-                <div className="col-md-12 col-sm-12">
-                <div className="section-title"  >
-                    <h2>Popular Courses <small>Upgrade your skills with newest courses</small></h2>
-                </div>
-                <div id="carouselExampleSlidesOnly" className="carousel slide" data-ride="carousel">
-                    <div className="carousel-inner">
-                    <div className="carousel-item active">
-                        <div className="row">
-                        <div className="col-md-4 col-sm-4">
-                            <div className="item">
-                                <div className="courses-thumb">
-                                    <div className="courses-top">
-                                        <div className="courses-image">
-                                            <img src={require('../img/courses-image1.jpg')} className="img-responsive" alt="" />
-                                        </div>
-                                        <div className="courses-date">
-                                            <span><i className="fas fa-calendar-alt" /> 12 / 7 / 2018</span>
-                                            <span><i className="far fa-clock" /> 7 Hours</span>
-                                        </div>
-                                    </div>
-                                    <div className="courses-detail">
-                                        <h3><a href="/">uaiidiuihaiu</a></h3>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                                    </div>
-                                    <div className="courses-info">
-                                        <div className="courses-author">
-                                            <img src={require('../img/author-image1.jpg')} className="img-responsive" alt="" />
-                                            <span>Mark Wilson</span>
-                                        </div>
-                                        <div className="courses-price">
-                                            <a href="/"><span>Free</span></a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div className="col-md-4 col-sm-4">
-                            <div className="item">
-                            <div className="courses-thumb">
-                                <div className="courses-top">
-                                <div className="courses-image">
-                                    <img src={require('../img/courses-image2.jpg')} className="img-responsive" alt="" />
-                                </div>
-                                <div className="courses-date">
-                                    <span><i className="fas fa-calendar-alt" /> 20 / 7 / 2018</span>
-                                    <span><i className="far fa-clock" /> 4.5 Hours</span>
-                                </div>
-                                </div>
-                                <div className="courses-detail">
-                                <h3><a href="/">Graphic &amp; Web Design</a></h3>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                                </div>
-                                <div className="courses-info">
-                                <div className="courses-author">
-                                    <img src={require('../img/author-image2.jpg')} className="img-responsive" alt="" />
-                                    <span>Jessica</span>
-                                </div>
-                                <div className="courses-price">
-                                    <a href="/"><span>Free</span></a>
-                                </div>
-                                </div>
-                            </div>
-                            </div>
-                        </div>
-
-                        <div className="col-md-4 col-sm-4">
-                            <div className="item">
-                            <div className="courses-thumb">
-                                <div className="courses-top">
-                                <div className="courses-image">
-                                    <img src={require('../img/courses-image3.jpg')} className="img-responsive" alt="" />
-                                </div>
-                                <div className="courses-date">
-                                    <span><i className="fas fa-calendar-alt" /> 15 / 8 / 2018</span>
-                                    <span><i className="far fa-clock" /> 6 Hours</span>
-                                </div>
-                                </div>
-                                <div className="courses-detail">
-                                <h3><a href="/">hyaisidsi</a></h3>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                                </div>
-                                <div className="courses-info">
-                                <div className="courses-author">
-                                    <img src={require('../img/author-image3.jpg')} className="img-responsive" alt="" />
-                                    <span>Catherine</span>
-                                </div>
-                                <div className="courses-price free">
-                                    <a href="/"><span>Free</span></a>
-                                </div>
-                                </div>
-                            </div>
-                            </div>
-                        </div>
-                        </div>            
-                    </div>
-
-                    <div className="carousel-item">
-                        <div className="row">
-                        <div className="col-md-4 col-sm-4">
-                            <div className="item">
-                            <div className="courses-thumb">
-                                <div className="courses-top">
-                                <div className="courses-image">
-                                    <img src={require('../img/courses-image4.jpg')} className="img-responsive" alt="" />
-                                </div>
-                                <div className="courses-date">
-                                    <span><i className="fas fa-calendar-alt" /> 10 / 8 / 2018</span>
-                                    <span><i className="far fa-clock" /> 8 Hours</span>
-                                </div>
-                                </div>
-                                <div className="courses-detail">
-                                <h3><a href="/">ujhaisijus</a></h3>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                                </div>
-                                <div className="courses-info">
-                                <div className="courses-author">
-                                    <img src={require('../img/author-image4.jpg')} className="img-responsive" alt="" />
-                                    <span>Mark Wilson</span>
-                                </div>
-                                <div className="courses-price">
-                                    <a href="/"><span>Free</span></a>
-                                    </div>
-                                </div>
-                                </div>
-                            </div>
-                            </div>
-
-                            <div className="col-md-4 col-sm-4">
-                            <div className="item">
-                            <div className="courses-thumb">
-                                <div className="courses-top">
-                                <div className="courses-image">
-                                    <img src={require('../img/courses-image5.jpg')} className="img-responsive" alt="" />
-                                </div>
-                                <div className="courses-date">
-                                    <span><i className="fas fa-calendar-alt" /> 10 / 8 / 2018</span>
-                                    <span><i className="far fa-clock" /> 8 Hours</span>
-                                </div>
-                                </div>
-                                <div className="courses-detail">
-                                <h3><a href="/">hjajsklaj</a></h3>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                                </div>
-                                <div className="courses-info">
-                                <div className="courses-author">
-                                    <img src={require('../img/author-image1.jpg')} className="img-responsive" alt="" />
-                                    <span>Mark Wilson</span>
-                                </div>
-                                <div className="courses-price">
-                                    <a href="/"><span>Free</span></a>
-                                    </div>
-                                </div>
-                                </div>
-                            </div>
-                            </div>
-
-                            <div className="col-md-4 col-sm-4">
-                            <div className="item">
-                            <div className="courses-thumb">
-                                <div className="courses-top">
-                                <div className="courses-image">
-                                    <img src={require('../img/courses-image1.jpg')} className="img-responsive" alt="" />
-                                </div>
-                                <div className="courses-date">
-                                    <span><i className="fas fa-calendar-alt" /> 10 / 8 / 2018</span>
-                                    <span><i className="far fa-clock" /> 8 Hours</span>
-                                </div>
-                                </div>
-                                <div className="courses-detail">
-                                <h3><a href="/">hhjskdkjkslkj</a></h3>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                                </div>
-                                <div className="courses-info">
-                                <div className="courses-author">
-                                    <img src={require('../img/author-image1.jpg')} className="img-responsive" alt="" />
-                                    <span>Mark Wilson</span>
-                                </div>
-                                <div className="courses-price">
-                                    <a href="/"><span>Free</span></a>
-                                    </div>
-                                </div>
-                                </div>
-                            </div>
-                            </div>
-                        </div> 
-                        </div>
-                    </div>
-                    </div>
-                </div>
-                </div>
+        return(
+            <div className="container mt-5">
+                <h2 className="text-center">Courses</h2>
+                <div className="row">{this.getCourses()}</div>
             </div>
-        </section>
-    
-    )
+        )
+    }
 }
 
-}
-
-export default Course;
+export default Maincourses;

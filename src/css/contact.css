@@ -3,8 +3,9 @@
   }
 
   .contactcon{
-    padding-top: 80px;
-    padding-bottom: 80px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+
   }
 
   #contact h2 {
@@ -14,6 +15,8 @@
   #contact .section-title {
     padding-bottom: 20px;
   }
+
+ 
 
   #contact h2 > small,
   #contact p,
@@ -39,16 +42,16 @@
     margin: 10px 0;
   }
 
-  #contact-form input {
+  #contact-form button {
     height: 50px;
   }
 
-  #contact-form input[type='submit'] {
+  #contact-form button[type='button'] {
     border-radius: 50px;
     border: 1px solid transparent;
   }
 
-  #contact-form input[type='submit']:hover {
+  #contact-form input[type='button']:hover {
     background: transparent;
     border-color: #ffffff;
     color: #ffffff;
@@ -75,5 +78,9 @@
   .sectiontitle small {
     display: block;
     color:black !important;
+    font-size:60% !important
   }
   
+.errorMessage{
+  background: transparent !important
+}
